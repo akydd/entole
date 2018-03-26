@@ -1,9 +1,9 @@
 import argparse
 import tensorflow as tf
 
-import load_data
+import entole_data
 
-parser = argparser.ArgumentParse()
+parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', default=20, type=int, help='batch size')
 parser.add_argument('--train_steps', default=1000, type=int, help='number of training steps')
 
@@ -23,7 +23,7 @@ def main(argv):
     #            "2 Peter", "1 John", "2 John", "Rev"]))
 
     for key in train_x.keys():
-        feature_columns.append(tf.feature_columns.categorical_column_with_vocabulary_list(
+        feature_columns.append(tf.feature_column.categorical_column_with_vocabulary_list(
         key=key,
         vocabulary_list = df[key].unique()))
 
@@ -35,7 +35,7 @@ def main(argv):
 
     # train the model
     classifier.train(
-            input_fn=lambda:entole_data.train_input_fx(train_x, train_y, args.batch_size),
+            input_fn=lambda:entole_data.train_input_fn(train_x, train_y, args.batch_size),
             steps =args.train_steps)
 
     # evaluate the model
