@@ -30,7 +30,7 @@ def main(argv):
             feature_columns = feature_columns,
             hidden_units=[10, 10],
             n_classes = 3,
-            label_vocabulary=['other', 'torah', 'decalogue'])
+            label_vocabulary=['torah', 'other', 'decalogue'])
 
     # train the model
     classifier.train(
