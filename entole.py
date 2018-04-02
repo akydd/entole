@@ -15,32 +15,31 @@ def main(argv):
 
     # Feature columns
     feature_columns = []
-    # book
-    #feature_columns.append(tf.feature_column.categorical_column_with_vocabulary_list(
-    #        key='book',
-    #        vocabulary_list=["Matthew", "Mark", "Luke", "John", "Acts",
-    #            "Romans", "1 Cor", "Eph", "Col", "1 Tim", "Titus", "Heb",
-    #            "2 Peter", "1 John", "2 John", "Rev"]))
-
     for key in train_x.keys():
-        feature_columns.append(tf.feature_column.categorical_column_with_vocabulary_list(
-        key=key,
-        vocabulary_list = df[key].unique()))
+        #print "The key is {}".format(key)
+        #print "Unique values are {}".format(df[key].unique())
+        new_col = tf.feature_column.indicator_column(
+            tf.feature_column.categorical_column_with_vocabulary_list(
+                key = key,
+                vocabulary_list = df[key].unique()))
+        print "new_col {} is ok".format(new_col)
+        feature_columns.append(new_col)
 
     # build the DNN
     classifier = tf.estimator.DNNClassifier(
             feature_columns = feature_columns,
             hidden_units=[10, 10],
-            n_classes = 3)
+            n_classes = 3,
+            label_vocabulary=['other', 'torah', 'decalogue'])
 
     # train the model
     classifier.train(
-            input_fn=lambda:entole_data.train_input_fn(train_x, train_y, args.batch_size),
-            steps =args.train_steps)
+            input_fn = lambda:entole_data.train_input_fn(train_x, train_y, args.batch_size),
+            steps = args.train_steps)
 
     # evaluate the model
     eval_result = classifier.evaluate(
-            input_fn = lambda:enetole_data.eval_input_fn(train_x, train_y, args.batch_size))
+            input_fn = lambda:entole_data.eval_input_fn(train_x, train_y, args.batch_size))
 
     print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_result))
 

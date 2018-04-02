@@ -3,27 +3,28 @@ import pandas as pd
 
 DATA = "entole.csv"
 
-CSV_COLUMN_NAMES = ['book', 'chapter', 'verse', 'author', 'author type',
-        'traditional author', 'traditional author type', 'audience type',
-        'speaker', 'listener', 'raw type', 'type', 'reason']
+CSV_COLUMN_NAMES = ['book', 'chapter', 'verse', 'author', 'author_type',
+        'traditional_author', 'traditional_author_type', 'audience_type',
+        'speaker', 'listener', 'raw_type', 'text_type', 'num_type', 'reason']
 
-TYPE = ['torah', 'decalogue', 'other']
+TYPE = ['torah', 'other', 'decalogue']
 
-def load_data(y_name='type'):
+def load_data(y_name='text_type'):
     """Returns the entole data set as df, (train_x, train_y), test."""
     df = pd.read_csv(DATA, names=CSV_COLUMN_NAMES, header=0)
     # we don't need these columns
     df.pop('reason')
-    df.pop('raw type')
+    df.pop('raw_type')
+    df.pop('num_type')
 
     # Split the entire data set into two subsets:
     # 1. Training subset has known values for the type
-    train_mask = df[y_name] != ''
+    train_mask = df[y_name].notnull()
     train = df[train_mask]
     train_x, train_y = train, train.pop(y_name)
 
     # 2. Testing subset has unknown values for the type
-    test_mask = df[y_name] == ''
+    test_mask = df[y_name].isnull()
     test = df[test_mask]
     test.pop(y_name)
 
@@ -38,7 +39,7 @@ def train_input_fn(features, labels, batch_size):
 
     return dataset
 
-def eval_input_fn(featyres, labels, batch_size):
+def eval_input_fn(features, labels, batch_size):
     """An input function for evauluation or prediction"""
     features = dict(features)
     if labels is None:
