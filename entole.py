@@ -30,7 +30,7 @@ def main(argv):
     # build the DNN
     classifier = tf.estimator.DNNClassifier(
             feature_columns = feature_columns,
-            hidden_units = [10, 10],
+            hidden_units = [6],
             n_classes = 3,
             label_vocabulary = entole_data.TYPE
     )
