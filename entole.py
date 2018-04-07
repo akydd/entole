@@ -13,7 +13,7 @@ def main(argv):
     # get data
     df, (train_x, train_y), test = entole_data.load_data()
 
-    # Feature columns
+    # create Feature columns
     feature_columns = []
     for key in train_x.keys():
         #print "The key is {}".format(key)
@@ -21,43 +21,56 @@ def main(argv):
         new_col = tf.feature_column.indicator_column(
             tf.feature_column.categorical_column_with_vocabulary_list(
                 key = key,
-                vocabulary_list = df[key].unique()))
-        print "new_col {} is ok".format(new_col)
+                vocabulary_list = df[key].unique()
+            )
+        )
+        #print "new_col {} is ok".format(new_col)
         feature_columns.append(new_col)
 
     # build the DNN
     classifier = tf.estimator.DNNClassifier(
             feature_columns = feature_columns,
-            hidden_units=[10, 10],
+            hidden_units = [10, 10],
             n_classes = 3,
-            label_vocabulary=['torah', 'other', 'decalogue'])
+            label_vocabulary = entole_data.TYPE
+    )
 
     # train the model
     classifier.train(
-            input_fn = lambda:entole_data.train_input_fn(train_x, train_y, args.batch_size),
-            steps = args.train_steps)
+            input_fn = lambda:entole_data.train_input_fn(
+                train_x, 
+                train_y, 
+                args.batch_size
+            ),
+            steps = args.train_steps
+    )
 
     # evaluate the model
     eval_result = classifier.evaluate(
-            input_fn = lambda:entole_data.eval_input_fn(train_x, train_y, args.batch_size))
+            input_fn = lambda:entole_data.eval_input_fn(
+                train_x, 
+                train_y, 
+                args.batch_size
+            )
+    )
 
     print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_result))
 
-    # Try the model for the test set
+    # Run the model on the test set
     predictions = classifier.predict(
             input_fn = lambda:entole_data.eval_input_fn(
                 test,
                 labels = None,
-                batch_size = args.batch_size))
+                batch_size = args.batch_size
+            )
+    )
 
-    template = ('\nComputed value is "{} ({:.1f}%)')
-
-    for pred_dict in predictions:
-        class_id = pred_dict['class_ids'][0]
-        probability = pred_dict['probabilities'][class_id]
-
-        print(template.format(entole_data.TYPE[class_id], 100 * probability))
-
+    # output results
+    for verse, pred_dict in zip(test['verse'].ravel(), predictions):
+        print(verse)
+        for p, t in zip(pred_dict['probabilities'], entole_data.TYPE):
+            print('Probability of {} is {:.1f}%').format(t, 100 * p)
+        print('\n')
 
 
 if __name__ == '__main__':
