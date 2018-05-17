@@ -1,4 +1,8 @@
 \documentclass{article}
+\usepackage{textgreek}
+\usepackage{xspace}
+
+\newcommand{\entole}{\textepsilon\textnu\texttau\textomikron\textlambda\textepsilon\xspace}
 
 \title{Applying machine learning to New Testament Greek}
 \author{Alan Kydd}
@@ -8,25 +12,54 @@
 \maketitle
 
 \begin{abstract}
-Using TensorFlow, a popular tool for machine learning, we train a deep neural
-network to categorize the various meanings of the Koine Greek word \textit{entole},
-        and it's various forms,
-when enough context is provided, and to predict the intended meaning of the same
-word when there is not enough context present to determine its precise meaning.
+The Koine Greek word \entole is often translated to the English
+word ``commandment'' in the King James bible.  The word ``commandment'' itself
+has various meanings depending on the context, as there are various tyoes of
+``commandments'' in the Bible.  Sometimes the type
+is obvious, such as when the ``commandment'' being referred to is explicity
+stated.  Other times, the type must be inferred from other contextual
+data.
+
+We use use TensorFlow to train a deep neural
+network to categorize the various translations of \entole,
+and it's various forms, when the type of ``commandment'' is explicit. 
+Then, for those instances when the type is not explicitly stated,  we use the network 
+to determine the type.
 \end{abstract}
 
 \section{Introduction}
-The word \textit{entole}, and it's variants, appear 67 times in the Greek New 
-Testament. It is frequently, but not always, translated as
-``commandment''. The type of commandment being referred to varies from text to 
+The word \entole, and it's variants, appear 67 times in the Greek New 
+Testament.  It is frequently, but not always, translated as
+``commandment''.  The type of commandment being referred to varies from text to 
 text.
 
 At times the meaning of ``commandment'' is clear from the context in which
-the word appears.  For example, TODO.  However, there are times when the precise
-meaning is not clear.  For example, TODO.  
+the word appears.  For example, Todo.  However, there are times when the precise
+meaning is not clear.  For example, Todo.  
 
 \section{Methods}
-What does this do?
+36 of the total 67 occurences of \entole can be explicitly linked to a specific
+commandment or groups of commandments.
+We classify these 36 commandments into three groups: ``Torah'', ``Decalogue'' (itself a part
+of the Torah), and a broad ``Other'' category which includes manmade laws
+and personal instructions from one person to another, among others.
+
+We aim to train a neural network to classify the remaining 34 occurences of \entole.  Thus
+we use a multilayer perceptron, implemented by TensorFlow's \texttt{tf.estimator.DNNClassifier}.
+The ouput layer consists of one neuron for each class.
+The features, or inputs, for the input layer are...todo
+We use a single hidden layer.  There are multiple methods of determining how many neurons
+to include in this layer.  In this paper we use three rules of thumb...
+
+\begin{eqnarray}
+    N_i < N_h & < & N_o\\
+    N_h & = & \frac{2 * N_i}{3} + N_o\\
+    N_h & < & 2 * N_i
+\end{eqnarray}
+
+The criteria selected for We track the location, details about the author, traditional or otherwise.
+If \entole was used within dialogue, we track the details of the dialogue:
+the parties involved, and their respective backgrounds.
 
 \section{Results}
 Here we can see that\ldots
