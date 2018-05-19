@@ -3,6 +3,7 @@
 \usepackage{xspace}
 \usepackage{booktabs}
 \usepackage{tabularx}
+\usepackage{longtable}
 
 \newcommand{\entole}{\textepsilon\textnu\texttau\textomikron\textlambda\textepsilon\xspace}
 
@@ -48,9 +49,10 @@ of the Torah), and ``Other''.  The ``Other'' type includes man-made laws
 and instructions from one person to another, among others.
 
 \begin{table}
+    \footnotesize
     \begin{tabularx}{\textwidth}{llX}
     \toprule
-    \textbf{Verse} & \textbf{Type} & \textbf{Reason} \\
+    Verse & Type & Reason \\
     \midrule
     Matthew 5:19 & Torah & Jesus uses the commandment as belonging to the Law \\
     Matthew 15:3 & Torah & Refers to Ex. 20:12, Ex. 21:17, Lev. 20:9 \\
@@ -61,42 +63,42 @@ and instructions from one person to another, among others.
     Mark 7:8 & Torah & Verse 10 refers to Ex. 20:12, Ex. 21:17, Lev. 20:9\\
     Mark 7:9 & Torah & Verse 10 refers to Ex. 20:12, Ex. 21:17, Lev. 20:9\\
     Mark 10:5 & Torah & Refers to divorce law, Deut. 24:1 for example\\
-    Mark 12:31 & Torah & \\
-    Luke 15:29 & Other & \\
-    Luke 18:20 & Decalogue & \\
-    Luke 23:56 & Decalogue & \\
-    John 10:18 & Other & \\
-    John 11:57 & Other & \\
-    John 12:49 & Other & \\
-    John 13:50 & Other & \\
-    John 13:34 & Other & \\
-    John 15:12 & Other & \\
-    Acts 17:15 & Other & \\
-    Romans 7:8 & Decalogue & \\
-    Romans 13:9 & Decalogue & \\
-    1 Cor. 14:37 & Other & \\
-    Eph. 6:2 & Decalogue & \\
-    Col. 4:10 & Other & \\
-    1 Tim. 6:14 & Other & \\
-    Titus 1:14 & Other & \\
-    Heb. 7:5 & Torah & \\
-    Heb. 7:16 & Torah & \\
-    Heb. 7:18 & Torah & \\
-    Heb. 9:19 & Torah & \\
-    1 John 3:23 & Other & \\
-    1 John 3:23 & Other & \\
-    1 John 3:24 & Torah & \\
-    1 John 4:21 & Other & \\
-    2 John 1:5 & Other & \\
+    Mark 12:31 & Torah & In His response, Jesus refers to Lev. 19:18, Deut. 6:5\\
+    Luke 15:29 & Other & Refers to a command given from father to son\\
+    Luke 18:20 & Decalogue & Jesus refers to part of the Decalogue\\
+    Luke 23:56 & Decalogue & Refers to Sabbath keeping\\
+    John 10:18 & Other & Jesus refers to a commandment given to Him from God the Father\\
+    John 11:57 & Other & Refers to command created by priests and Pharisees\\
+    John 12:49 & Other & Jesus refers to a commandment given to Him from God the Father\\
+    John 13:30 & Other & Jesus refers to a commandment given to Him from God the Father\\
+    John 13:34 & Other & Jesus states that this is new commandment given by Him\\
+    John 15:12 & Other & Jesus states that this is His commandment\\
+    Acts 17:15 & Other & Command from Silas and Timothy\\
+    Romans 7:8 & Decalogue & Refers to coveting, a member of the Decalogue\\
+    Romans 13:9 & Decalogue & Word is used in reference to parts of the Decalogue.  ``Love thy neighbour'' is not called a commandment here.\\
+    1 Cor. 14:37 & Other & Paul refers to his own writings, in this context, as the commands\\
+    Eph. 6:2 & Decalogue & Honor your father and mother\\
+    Col. 4:10 & Other & These are instructions to Mark when he visits\\
+    1 Tim. 6:14 & Other & Refers to the author's instructions to Timothy, given in previous verses\\
+    Titus 1:14 & Other & Usage is ``commandments of men''\\
+    Heb. 7:5 & Torah & Refers to tithe\\
+    Heb. 7:16 & Torah & Refers to laws defining the Levitical priesthood\\
+    Heb. 7:18 & Torah & Refers to laws defining the Levitical priesthood\\
+    Heb. 9:19 & Torah & May refer to Ex. 24:8.  Certainly not to the Decalogue\\
+    1 John 3:23 & Other & The command here is to believe in the nme of Jesus, and to love one another\\
+    1 John 3:23 & Other & The command here is to believe in the nme of Jesus, and to love one another\\
+    1 John 3:24 & Other & Plural, referring to the above, but possibly includes more\\
+    1 John 4:21 & Other & The command here is that anyone who loves God must also love their brother and sister\\
+    2 John 1:5 & Other & The command here is to love one another\\
     \bottomrule
 \end{tabularx}
     \caption{Classification of \entole}
     \label{training}
 \end{table}
 
-We use the set of classified data to train a neural network to classify the remaining 34
-occurences of \entole and its variants.  Thus
-we use a multilayer perceptron, implemented by TensorFlow's \texttt{tf.estimator.DNNClassifier}.
+We use the set of classified data as the basis for the data set used to train a neural network to classify the remaining 34
+occurences of \entole and its variants.  
+We use a multilayer perceptron, implemented by TensorFlow's \texttt{tf.estimator.DNNClassifier}.
 
 The ouput layer consists of three neurons, one for each type.
 
@@ -108,6 +110,123 @@ to the traditional author.  Details about dialogue, if any: was the word used in
 who were the parties involved, and what was their cultural or religious background?  Intended audience:
 who was the intended audience of the book in which the occurence appears?
 
+\begin{table}
+    \centering
+    \begin{tabular}{lll}
+    \toprule
+        Book & Traditional author & Traditional author's background \\
+    \midrule
+        Matthew & Matthew & Jewish Christian \\
+        Mark & Mark & Jewish Christian \\
+        Luke & Luke & Gentile Christian \\
+        John & John & Jewish Christian \\
+        Acts & Luke & Gentile Christian \\
+        Romans & Paul & Jewish Christian \\
+        1 Corintians & Paul & Jewish Christian \\
+        Ephesians & Paul & Jewish Christian \\
+        Collosians & Paul & Jewish Christian \\
+        1 Timothy & Paul & Jewish Christian \\
+        Titus & Paul & Jewish Christian \\
+        Hebrews & Paul & Jewish Christian \\
+        2 Peter & Peter & Jewish Christian \\
+        1 John & John & Jewish Christian \\
+        2 John & John & Jewish Christian \\
+        Revelations & John & Jewish Christian \\
+    \bottomrule
+    \end{tabular}
+    \caption{Traditional author and background}
+    \label{traditionalauthor}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{lll}
+    \toprule
+        Book & Author & Author's background\\
+    \midrule
+        Matthew & Matthew & Jewish Christian \\
+        Mark & Mark & Jewish Christian \\
+        Luke & Luke & Gentile Christian \\
+        John & John & Jewish Christian \\
+        Acts & Luke & Gentile Christian \\
+        Romans & Paul & Jewish Christian \\
+        1 Corintians & Paul & Jewish Christian \\
+        Ephesians & Paul & Jewish Christian \\
+        Collosians & Paul & Jewish Christian \\
+        1 Timothy & Paul & Jewish Christian \\
+        Titus & Paul & Jewish Christian \\
+        Hebrews & Paul & Jewish Christian \\
+        2 Peter & Peter & Jewish Christian \\
+        1 John & John & Jewish Christian \\
+        2 John & John & Jewish Christian \\
+        Revelations & John & Jewish Christian \\
+    \bottomrule
+    \end{tabular}
+    \caption{Author and background}
+    \label{author}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{ll}
+    \toprule
+        Book & Audience \\
+    \midrule
+        Matthew & Jewish Christian \\
+        Mark & Jewish Christian \\
+        Luke & Gentile Christian \\
+        John & Jewish Christian \\
+        Acts & Gentile Christian \\
+        Romans & Jewish Christian \\
+        1 Corintians & Jewish Christian \\
+        Ephesians & Jewish Christian \\
+        Collosians & Jewish Christian \\
+        1 Timothy & Jewish Christian \\
+        Titus & Jewish Christian \\
+        Hebrews & Jewish Christian \\
+        2 Peter & Jewish Christian \\
+        1 John & Jewish Christian \\
+        2 John & Jewish Christian \\
+        Revelations & Jewish Christian \\
+    \bottomrule
+    \end{tabular}
+    \caption{Audience}
+    \label{audience}
+\end{table}
+
+\begin{table}
+    \centering
+    \begin{tabular}{lll}
+    \toprule
+        Verse & Speaker & Listener \\
+    \midrule
+        Matthew 5:19 & Jesus & crowds \\
+        Matthew 15:3 & Jesus & scribes and Pharisees \\
+        Matthew 19:17 & Jesus & rich young man \\
+        Matthew 22:36 & lawyer & Jesus \\
+        Matthew 22:38 & Jesus & lawyer \\
+        Matthew 22:40 & Jesus & lawyer \\
+        Mark & Mark & Jewish Christian \\
+        Luke & Luke & Gentile Christian \\
+        John & John & Jewish Christian \\
+        Acts & Luke & Gentile Christian \\
+        Romans & Paul & Jewish Christian \\
+        1 Corintians & Paul & Jewish Christian \\
+        Ephesians & Paul & Jewish Christian \\
+        Collosians & Paul & Jewish Christian \\
+        1 Timothy & Paul & Jewish Christian \\
+        Titus & Paul & Jewish Christian \\
+        Hebrews & Paul & Jewish Christian \\
+        2 Peter & Peter & Jewish Christian \\
+        1 John & John & Jewish Christian \\
+        2 John & John & Jewish Christian \\
+        Revelations & John & Jewish Christian \\
+    \bottomrule
+    \end{tabular}
+    \caption{Dialogue}
+    \label{dialogue}
+\end{table}
+
 We use a single hidden layer.  There are multiple methods of determining how many neurons
 to include in this layer.  In this paper we use two rules of thumb provided in~\cite{Heaton2008}.
 
@@ -117,10 +236,6 @@ to include in this layer.  In this paper we use two rules of thumb provided in~\
 \end{eqnarray}
 where $N_h$ is the number of neurons in the hidden layer, $N_i$ is the number of neurons in the input
 layer, and $N_o$ is the number of neurons in the output layer.
-
-The criteria selected for We track the location, details about the author, traditional or otherwise.
-If \entole was used within dialogue, we track the details of the dialogue:
-the parties involved, and their respective backgrounds.
 
 \section{Results}
 Here we can see that\ldots
