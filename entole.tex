@@ -4,11 +4,13 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{longtable}
+\usepackage[backend=biber,sortcites]{biblatex}
 
 \newcommand{\entole}{\textepsilon\textnu\texttau\textomikron\textlambda\textepsilon\xspace}
 
 \title{Applying machine learning to New Testament Greek}
 \author{Alan Kydd}
+\addbibresource{entole.bib}
 
 \begin{document}
 
@@ -50,7 +52,8 @@ and instructions from one person to another, among others.
 
 \begin{table}
     \footnotesize
-    \begin{tabularx}{\textwidth}{llX}
+    \renewcommand\arraystretch{1.2}
+    \begin{tabularx}{\textwidth}{@{}llX@{}}
     \toprule
     Verse & Type & Reason \\
     \midrule
@@ -112,7 +115,8 @@ who was the intended audience of the book in which the occurence appears?
 
 \begin{table}
     \centering
-    \begin{tabular}{lll}
+    \renewcommand\arraystretch{1.3}
+    \begin{tabular}{@{}lll@{}}
     \toprule
         Book & Traditional author & Traditional author's background \\
     \midrule
@@ -140,12 +144,13 @@ who was the intended audience of the book in which the occurence appears?
 
 \begin{table}
     \centering
-    \begin{tabular}{lll}
+    \renewcommand\arraystretch{1.3}
+    \begin{tabular}{@{}lll@{}}
     \toprule
-        Book & Author & Author's background\\
+        Book & Inferred author & Inferred author's background\\
     \midrule
-        Matthew & Matthew & Jewish Christian \\
-        Mark & Mark & Jewish Christian \\
+        Matthew & Anon-Matthew & Jewish Christian~\cite{Duling2010} \\
+        Mark & Mark & Christian~\cite{Schroter2010} \\
         Luke & Luke & Gentile Christian \\
         John & John & Jewish Christian \\
         Acts & Luke & Gentile Christian \\
@@ -162,19 +167,20 @@ who was the intended audience of the book in which the occurence appears?
         Revelations & John & Jewish Christian \\
     \bottomrule
     \end{tabular}
-    \caption{Author and background}
+    \caption{Inferred author and background}
     \label{author}
 \end{table}
 
 \begin{table}
     \centering
-    \begin{tabular}{ll}
+    \renewcommand\arraystretch{1.3}
+    \begin{tabular}{@{}ll@{}}
     \toprule
         Book & Audience \\
     \midrule
         Matthew & Jewish Christian \\
-        Mark & Jewish Christian \\
-        Luke & Gentile Christian \\
+        Mark & Gentile Christian~\cite{Schroter2010} \\
+        Luke & Gentile \& Jewish Christian~\cite{Thompson2010} \\
         John & Jewish Christian \\
         Acts & Gentile Christian \\
         Romans & Jewish Christian \\
@@ -196,31 +202,34 @@ who was the intended audience of the book in which the occurence appears?
 
 \begin{table}
     \centering
-    \begin{tabular}{lll}
+    \renewcommand\arraystretch{1.3}
+    \begin{tabular}{@{}lrrll@{}}
     \toprule
-        Verse & Speaker & Listener \\
+        Book & Chapter & Verse & Speaker & Listener \\
     \midrule
-        Matthew 5:19 & Jesus & crowds \\
-        Matthew 15:3 & Jesus & scribes and Pharisees \\
-        Matthew 19:17 & Jesus & rich young man \\
-        Matthew 22:36 & lawyer & Jesus \\
-        Matthew 22:38 & Jesus & lawyer \\
-        Matthew 22:40 & Jesus & lawyer \\
-        Mark & Mark & Jewish Christian \\
-        Luke & Luke & Gentile Christian \\
-        John & John & Jewish Christian \\
-        Acts & Luke & Gentile Christian \\
-        Romans & Paul & Jewish Christian \\
-        1 Corintians & Paul & Jewish Christian \\
-        Ephesians & Paul & Jewish Christian \\
-        Collosians & Paul & Jewish Christian \\
-        1 Timothy & Paul & Jewish Christian \\
-        Titus & Paul & Jewish Christian \\
-        Hebrews & Paul & Jewish Christian \\
-        2 Peter & Peter & Jewish Christian \\
-        1 John & John & Jewish Christian \\
-        2 John & John & Jewish Christian \\
-        Revelations & John & Jewish Christian \\
+        Matthew & 5 & 19 & Jesus & crowds \\
+         & 15 & 3 & Jesus & scribes and Pharisees \\
+         & 19 & 17 & Jesus & rich young man \\
+         & 22 & 36 & lawyer & Jesus \\
+         &  & 38 & Jesus & lawyer \\
+         &  & 40 & Jesus & lawyer \\
+        Mark & 7 & 7 & Jesus & scribes and Pharisees \\
+         &  & 8 & Jesus & scribes and Pharisees \\
+         &  & 9 & Jesus & scribes and Pharisees \\
+         & 10 & 5 & Jesus & Pharisees \\
+         & & 19 & Jesus & rich young man \\
+         & 12 & 28 & scribe & Jesus \\
+         & & 31 & Jesus & scribe \\
+        Luke & 15 & 29& Jesus & scribes and Pharisees \\
+        & 18 & 20 & Jesus & rich young man \\
+        John & 10 & 18 & Jesus & Pharisees \\
+         & 12 & 49 & Jesus & crowds \\
+         & 13 & 30 & Jesus & crowds \\
+         & & 34 & Jesus & disciples \\
+         & 14 & 15 & Jesus & disciples \\
+         & & 21 & Jesus & disciples \\
+         & 15 & 10 & Jesus & disciples \\
+         & & 12 & Jesus & disciples \\
     \bottomrule
     \end{tabular}
     \caption{Dialogue}
@@ -243,15 +252,5 @@ Here we can see that\ldots
 \section{Discussion}
 Test
 
-\begin{thebibliography}{1}
-
-\bibitem{Heaton2008}
-    Jeff Heaton,
-    \emph{Introduction to Neural Networks for Java},
-    Heaton Research Incorporated,
-    Second Edition,
-    2008
-
-\end{thebibliography}
-
+\printbibliography
 \end{document}
