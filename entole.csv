@@ -5,17 +5,17 @@ Matthew,Matthew:19,Matthew:19:17,anon_matthew,Jewish Christian,matthew,Jewish Ch
 Matthew,Matthew:22,Matthew:22:36,anon_matthew,Jewish Christian,matthew,Jewish Christian,Jewish Christian,lawyer,Jesus,,,,not enough context from this side of conversation
 Matthew,Matthew:22,Matthew:22:38,anon_matthew,Jewish Christian,matthew,Jewish Christian,Jewish Christian,Jesus,lawyer,any of the laws from Moses,torah,0,Jesus uses part of Lev. 19:18 and Deut. 6:5
 Matthew,Matthew:22,Matthew:22:40,anon_matthew,Jewish Christian,matthew,Jewish Christian,Jewish Christian,Jesus,lawyer,any of the laws from Moses,torah,0,Jesus uses part of Lev. 19:18 and Deut. 6:5
-Mark,Mark:7,Mark:7:7,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribes and Pharisees,man made,other,1,"phrase is ""commandments of men"""
-Mark,Mark:7,Mark:7:8,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribes and Pharisees,any of the laws from Moses,torah,0,"Jesus uses two examples in v. 10 for the broken commandment: one from the decalogue - Ex 20:12, and one mentioned twice elsewhere - Ex.21:17, Lev 20:9"
-Mark,Mark:7,Mark:7:9,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribes and Pharisees,any of the laws from Moses,torah,0,"Jesus uses two examples in v. 10 for the broken commandment: one from the decalogue - Ex 20:12, and one mentioned twice elsewhere - Ex.21:17, Lev 20:9"
-Mark,Mark:10,Mark:10:5,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Jesus,Pharisees,any of the laws from Moses,torah,0,Jesus used the word referring to the law for divorce.  Deut 24:1 for example.
-Mark,Mark:10,Mark:10:19,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Jesus,rich young man,,,,"Jesus lists only part of the decalogue, but throws in ""defraud not""."
-Mark,Mark:12,Mark:12:28,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Scribe,Jesus,,,,not enough context from this side of conversation
-Mark,Mark:12,Mark:12:31,anon_mark,Jewish Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribe,any of the laws from Moses,torah,0,In Jesus response in the surrounding verses he uses part of Lev. 19:18 and Deut. 6:5
-Luke,Luke:1,Luke:1:6,anon_luke,Christian,luke,Gentile Christian,Christian,none,none,,,,not enough context
-Luke,Luke:15,Luke:15:29,anon_luke,Christian,luke,Gentile Christian,Christian,Jesus,scribes and Pharisees,man made,other,1,"Used to refer to commandments from father to son, in context of a parable"
-Luke,Luke:18,Luke:18:20,anon_luke,Christian,luke,Gentile Christian,Christian,Jesus,rich young man,decalogue,decalogue,2,"Jesus lists only part of the decalogue,"
-Luke,Luke:23,Luke:23:56,anon_luke,Christian,luke,Gentile Christian,Christian,none,none,decalogue,decalogue,2,used in reference to Sabbath keeping
+Mark,Mark:7,Mark:7:7,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribes and Pharisees,man made,other,1,"phrase is ""commandments of men"""
+Mark,Mark:7,Mark:7:8,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribes and Pharisees,any of the laws from Moses,torah,0,"Jesus uses two examples in v. 10 for the broken commandment: one from the decalogue - Ex 20:12, and one mentioned twice elsewhere - Ex.21:17, Lev 20:9"
+Mark,Mark:7,Mark:7:9,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribes and Pharisees,any of the laws from Moses,torah,0,"Jesus uses two examples in v. 10 for the broken commandment: one from the decalogue - Ex 20:12, and one mentioned twice elsewhere - Ex.21:17, Lev 20:9"
+Mark,Mark:10,Mark:10:5,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Jesus,Pharisees,any of the laws from Moses,torah,0,Jesus used the word referring to the law for divorce.  Deut 24:1 for example.
+Mark,Mark:10,Mark:10:19,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Jesus,rich young man,,,,"Jesus lists only part of the decalogue, but throws in ""defraud not""."
+Mark,Mark:12,Mark:12:28,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Scribe,Jesus,,,,not enough context from this side of conversation
+Mark,Mark:12,Mark:12:31,anon_mark,Christian,mark,Jewish Christian,Gentile Christian,Jesus,scribe,any of the laws from Moses,torah,0,In Jesus response in the surrounding verses he uses part of Lev. 19:18 and Deut. 6:5
+Luke,Luke:1,Luke:1:6,anon_luke,Gentile Christian,luke,Gentile Christian,Christian,none,none,,,,not enough context
+Luke,Luke:15,Luke:15:29,anon_luke,Gentile Christian,luke,Gentile Christian,Christian,Jesus,scribes and Pharisees,man made,other,1,"Used to refer to commandments from father to son, in context of a parable"
+Luke,Luke:18,Luke:18:20,anon_luke,Gentile Christian,luke,Gentile Christian,Christian,Jesus,rich young man,decalogue,decalogue,2,"Jesus lists only part of the decalogue,"
+Luke,Luke:23,Luke:23:56,anon_luke,Gentile Christian,luke,Gentile Christian,Christian,none,none,decalogue,decalogue,2,used in reference to Sabbath keeping
 John,John:10,John:10:18,anon_john,Jewish Christian,john,Jewish Christian,Christian,Jesus,Pharisees,other,other,1,"Jesus refers to a commandment he received personally from God, not to something from the books of Moses"
 John,John:11,John:11:57,anon_john,Jewish Christian,john,Jewish Christian,Christian,none,none,other,other,1,word used in reference to a command created by priests and Pharisees
 John,John:12,John:12:49,anon_john,Jewish Christian,john,Jewish Christian,Christian,Jesus,crowd,other,other,1,"Jesus refers to a commandment he received personally from God, not to something from the books of Moses"
@@ -26,7 +26,7 @@ John,John:14,John:14:21,anon_john,Jewish Christian,john,Jewish Christian,Christi
 John,John:15,John:15:10,anon_john,Jewish Christian,john,Jewish Christian,Christian,Jesus,disciples,,,,"Jesus uses the word to refer to his own commandments.  But he is God, so this could be taken to include the laws from the books of Moses"
 John,John:15,John:15:10,anon_john,Jewish Christian,john,Jewish Christian,Christian,Jesus,disciples,,,,Jesus refers to God the Father's commandments.  But to which ones is he referring?  Certainly he kept all the ones that Jewish males were required to keep.
 John,John:15,John:15:12,anon_john,Jewish Christian,john,Jewish Christian,Christian,Jesus,disciples,other,other,1,"Here Jesus gives a new commandment, he is not referring to something from the books of Moses"
-Acts,Acts:17,Acts:17:15,anon_luke,Christian,luke,Gentile Christian,Christian,none,none,man made,other,1,Orders came from Silas and Timothy
+Acts,Acts:17,Acts:17:15,anon_luke,Gentile Christian,luke,Gentile Christian,Christian,none,none,man made,other,1,Orders came from Silas and Timothy
 Romans,Romans:7,Romans:7:8,paul,Jewish Christian,paul,Jewish Christian,Christian,none,none,decalogue,decalogue,2,"Refers to coveting,a member of the decalogue"
 Romans,Romans:7,Romans:7:9,paul,Jewish Christian,paul,Jewish Christian,Christian,none,none,,,,"Paul speaks of the law and the commandment separately.  Unclear if they are equivalent of not, within the confines of this verse"
 Romans,Romans:7,Romans:7:10,paul,Jewish Christian,paul,Jewish Christian,Christian,none,none,,,,"Paul speaks of the law and the commandment separately.  Unclear if they are equivalent of not, within the confines of this verse"
@@ -41,10 +41,10 @@ Eph,Eph:6,Eph:6:2,pseudo_paul,Christian,paul,Jewish Christian,Gentile Christian,
 Col,Col:4,Col:4:10,pseudo_paul_1,Christian,paul and timothy,Jewish Christian and Gentile Christian,Gentile Christian,none,none,other,other,1,These are instructions to receive Mark when he visits
 1 Tim,1Tim:6,1Tim:6:14,pseudo_paul_2,Christian,paul,Jewish Christian,Gentile Christian,none,none,other,other,1,"Refers to the writer's instructions to Timothy, contained in the preceding verses"
 Titus,Titus:1,Titus:1:14,pseudo_paul_2,Christian,paul,Jewish Christian,Gentile Christian,none,none,man made,other,1,"Usage is ""commandments of men"""
-Heb,Heb:7,Heb:7:5,anon_heb,Christian,paul,Jewish Christian,Jewish Christian,none,none,"Law of Moses, non decalogue",torah,0,Used in reference to tithe
-Heb,Heb:7,Heb:7:16,anon_heb,Christian,paul,Jewish Christian,Jewish Christian,none,none,"Law of Moses, non decalogue",torah,0,"Used when comparing the Mosaic law defining the Levitical preisthood to the priesly role of Jesus, who was not a Levite"
-Heb,Heb:7,Heb:7:18,anon_heb,Christian,paul,Jewish Christian,Jewish Christian,none,none,"Law of Moses, non decalogue",torah,0,"Used when comparing the Mosaic law defining the Levitical preisthood to the priesly role of Jesus, who was not a Levite"
-Heb,Heb:9,Heb:9:19,anon_heb,Christian,paul,Jewish Christian,Jewish Christian,none,none,any of the laws from Moses,torah,0,"Does this refer to Ex 24:8?  Moses says similar words,but does not use hysspo, water or red wool.  Or does it refer to when Moses ordained the preists?  Either way, the commandments spoken of do not refer to the Decalogie specifically."
+Heb,Heb:7,Heb:7:5,anon_paul,Christian,paul,Jewish Christian,Jewish Christian,none,none,"Law of Moses, non decalogue",torah,0,Used in reference to tithe
+Heb,Heb:7,Heb:7:16,anon_paul,Christian,paul,Jewish Christian,Jewish Christian,none,none,"Law of Moses, non decalogue",torah,0,"Used when comparing the Mosaic law defining the Levitical preisthood to the priesly role of Jesus, who was not a Levite"
+Heb,Heb:7,Heb:7:18,anon_paul,Christian,paul,Jewish Christian,Jewish Christian,none,none,"Law of Moses, non decalogue",torah,0,"Used when comparing the Mosaic law defining the Levitical preisthood to the priesly role of Jesus, who was not a Levite"
+Heb,Heb:9,Heb:9:19,anon_paul,Christian,paul,Jewish Christian,Jewish Christian,none,none,any of the laws from Moses,torah,0,"Does this refer to Ex 24:8?  Moses says similar words,but does not use hysspo, water or red wool.  Or does it refer to when Moses ordained the preists?  Either way, the commandments spoken of do not refer to the Decalogie specifically."
 2 Peter,2Peter:2,2Peter:2:21,pseudo_peter,Christian,peter,Jewish Christian,Christian,none,none,,,,Not enough context
 2 Peter,2Peter:3,2Peter:3:2,pseudo_peter,Christian,peter,Jewish Christian,Christian,none,none,,,,"Not enough context.  Even translations do not all agree, but this does not seem to point to the decalogue specifically"
 1 John,1John:2,1John:2:3,anon_john_1,Christian,john,Jewish Christian,Gentile Christian,none,none,,,,Not enough context
