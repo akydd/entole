@@ -1,5 +1,6 @@
 import argparse
 import tensorflow as tf
+import numpy as np
 
 import entole_data
 
@@ -26,53 +27,64 @@ def main(argv):
         )
         #print "new_col {} is ok".format(new_col)
         feature_columns.append(new_col)
-
-    # build the DNN
-    classifier = tf.estimator.DNNClassifier(
+        # build the DNN
+        classifier = tf.estimator.DNNClassifier(
             feature_columns = feature_columns,
-            hidden_units = [6],
+            hidden_units = [7],
             n_classes = 3,
             label_vocabulary = entole_data.TYPE
     )
 
-    # train the model
-    classifier.train(
-            input_fn = lambda:entole_data.train_input_fn(
-                train_x, 
-                train_y, 
-                args.batch_size
-            ),
-            steps = args.train_steps
-    )
+    results = {}
+    for x in range(0, 10):
+        # train the model
+        classifier.train(
+                input_fn = lambda:entole_data.train_input_fn(
+                    train_x, 
+                    train_y, 
+                    args.batch_size
+                ),
+                steps = args.train_steps
+        )
 
-    # evaluate the model
-    eval_result = classifier.evaluate(
-            input_fn = lambda:entole_data.eval_input_fn(
-                train_x, 
-                train_y, 
-                args.batch_size
-            )
-    )
+        # evaluate the model
+        eval_result = classifier.evaluate(
+                input_fn = lambda:entole_data.eval_input_fn(
+                    train_x, 
+                    train_y, 
+                    args.batch_size
+                )
+        )
 
-    print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_result))
+        print('\nTest set accuracy: {accuracy:0.3f}\n'.format(**eval_result))
 
-    # Run the model on the test set
-    predictions = classifier.predict(
-            input_fn = lambda:entole_data.eval_input_fn(
-                test,
-                labels = None,
-                batch_size = args.batch_size
-            )
-    )
+        # Run the model on the test set
+        predictions = classifier.predict(
+                input_fn = lambda:entole_data.eval_input_fn(
+                    test,
+                    labels = None,
+                    batch_size = args.batch_size
+                )
+        )
 
-    # output results
-    for verse, pred_dict in zip(test['verse'].ravel(), predictions):
-        print(verse)
-        for p, t in zip(pred_dict['probabilities'], entole_data.TYPE):
-            print('Probability of {} is {:.1f}%').format(t, 100 * p)
+        # populate results
+        for verse, pred_dict in zip(test['verse'].ravel(), predictions):
+            if verse not in results:
+                results[verse] = {}
+                
+            for p, t in zip(pred_dict['probabilities'], entole_data.TYPE):
+                if t not in results[verse]:
+                    results[verse][t] = []
+                results[verse][t].append(100 * p)
+
+    # print results
+    for verse, result in results.iteritems():
+        print('{}'.format(verse))
+        for t, data in result.iteritems():
+            print('{} - Average={:.3f}%, Variance={}'.format(t, np.mean(data), np.var(data)))
         print('\n')
 
 
 if __name__ == '__main__':
-    tf.logging.set_verbosity(tf.logging.INFO)
+    tf.logging.set_verbosity(tf.logging.WARN)
     tf.app.run(main)
