@@ -5,6 +5,7 @@
 \usepackage{tabularx}
 \usepackage{longtable}
 \usepackage[backend=biber,sortcites]{biblatex}
+\usepackage{tablefootnote}
 
 \newcommand{\entole}{\textepsilon\textnu\texttau\textomikron\textlambda\textepsilon\xspace}
 
@@ -69,48 +70,48 @@ of the Torah), and ``Other''.  The ``Other'' type includes man-made laws
 and instructions from one person to another, among others.
 
 \begin{table}
+    \centering
     \footnotesize
-    \renewcommand\arraystretch{1.2}
-    \begin{tabularx}{\textwidth}{@{}llX@{}}
+    \renewcommand\arraystretch{1}
+    \begin{tabularx}{\textwidth+40pt}{@{}lrrlX@{}}
     \toprule
-    Verse & Type & Reason \\
+    Book & Chapter & Verse & Type & Reason \\
     \midrule
-    Matthew 5:19 & Torah & Jesus uses the commandment as belonging to the Law \\
-    Matthew 15:3 & Torah & Refers to Ex. 20:12, Ex. 21:17, Lev. 20:9 \\
-    Matthew 19:17 & Torah & Five Decalogue commandments mentioned, plus Lev. 19:18 \\
-    Matthew 22:38 & Torah & Lev. 19:18, Deut. 6:5\\
-    Matthew 22:40 & Torah & Lev. 19:18, Deut. 6:5\\
-    Mark 7:7 & Other & phrase is ``commandments of men'' \\
-    Mark 7:8 & Torah & Verse 10 refers to Ex. 20:12, Ex. 21:17, Lev. 20:9\\
-    Mark 7:9 & Torah & Verse 10 refers to Ex. 20:12, Ex. 21:17, Lev. 20:9\\
-    Mark 10:5 & Torah & Refers to divorce law, Deut. 24:1 for example\\
-    Mark 12:31 & Torah & In His response, Jesus refers to Lev. 19:18, Deut. 6:5\\
-    Luke 15:29 & Other & Refers to a command given from father to son\\
-    Luke 18:20 & Decalogue & Jesus refers to part of the Decalogue\\
-    Luke 23:56 & Decalogue & Refers to Sabbath keeping\\
-    John 10:18 & Other & Jesus refers to a commandment given to Him from God the Father\\
-    John 11:57 & Other & Refers to command created by priests and Pharisees\\
-    John 12:49 & Other & Jesus refers to a commandment given to Him from God the Father\\
-    John 13:30 & Other & Jesus refers to a commandment given to Him from God the Father\\
-    John 13:34 & Other & Jesus states that this is new commandment given by Him\\
-    John 15:12 & Other & Jesus states that this is His commandment\\
-    Acts 17:15 & Other & Command from Silas and Timothy\\
-    Romans 7:8 & Decalogue & Refers to coveting, a member of the Decalogue\\
-    Romans 13:9 & Decalogue & Word is used in reference to parts of the Decalogue.  ``Love thy neighbour'' is not called a commandment here.\\
-    1 Cor. 14:37 & Other & Paul refers to his own writings, in this context, as the commands\\
-    Eph. 6:2 & Decalogue & Honor your father and mother\\
-    Col. 4:10 & Other & These are instructions to Mark when he visits\\
-    1 Tim. 6:14 & Other & Refers to the author's instructions to Timothy, given in previous verses\\
-    Titus 1:14 & Other & Usage is ``commandments of men''\\
-    Heb. 7:5 & Torah & Refers to tithe\\
-    Heb. 7:16 & Torah & Refers to laws defining the Levitical priesthood\\
-    Heb. 7:18 & Torah & Refers to laws defining the Levitical priesthood\\
-    Heb. 9:19 & Torah & May refer to Ex. 24:8.  Certainly not to the Decalogue\\
-    1 John 3:23 & Other & The command here is to believe in the nme of Jesus, and to love one another\\
-    1 John 3:23 & Other & The command here is to believe in the nme of Jesus, and to love one another\\
-    1 John 3:24 & Other & Plural, referring to the above, but possibly includes more\\
-    1 John 4:21 & Other & The command here is that anyone who loves God must also love their brother and sister\\
-    2 John 1:5 & Other & The command here is to love one another\\
+    Matthew & 5&19 & Torah & Jesus uses the commandment as belonging to the Law \\
+    &15&3 & Torah & Refers to Ex. 20:12, Ex. 21:17, Lev. 20:9 \\
+    &19&17 & Torah & Five Decalogue commandments mentioned, plus Lev. 19:18 \\
+    &22&38 & Torah & Lev. 19:18, Deut. 6:5\\
+    & &40 & Torah & Lev. 19:18, Deut. 6:5\\
+    Mark&7&7 & Other & phrase is ``commandments of men'' \\
+    & &8 & Torah & Verse 10 refers to Ex. 20:12, Ex. 21:17, Lev. 20:9\\
+    & &9 & Torah & Verse 10 refers to Ex. 20:12, Ex. 21:17, Lev. 20:9\\
+    &10&5 & Torah & Refers to divorce law, Deut. 24:1 for example\\
+    &12&31 & Torah & In His response, Jesus refers to Lev. 19:18, Deut. 6:5\\
+    Luke&15&29 & Other & Refers to a command given from father to son\\
+    &18&20 & Decalogue & Jesus refers to part of the Decalogue\\
+    &23&56 & Decalogue & Refers to Sabbath keeping\\
+    John&10&18 & Other & Jesus refers to a commandment given to Him from God the Father\\
+    &11&57 & Other & Refers to command created by priests and Pharisees\\
+    &12&49 & Other & Jesus refers to a commandment given to Him from God the Father\\
+    &13&30 & Other & Jesus refers to a commandment given to Him from God the Father\\
+    & &34 & Other & Jesus states that this is new commandment given by Him\\
+    &15&12 & Other & Jesus states that this is His commandment\\
+    Acts&17&15 & Other & Command from Silas and Timothy\\
+    Romans&7&8 & Decalogue & Refers to coveting, a member of the Decalogue\\
+    &13&9 & Decalogue & Word is used in reference to parts of the Decalogue.  ``Love thy neighbour'' is not called a commandment here.\\
+    1 Corinthains&14&37 & Other & Paul refers to his own writings, in this context, as the commands\\
+    Ephesians &6&2 & Decalogue & Honor your father and mother\\
+    Colossians&4&10 & Other & These are instructions to Mark when he visits\\
+    1 Timothy &6&14 & Other & Refers to the author's instructions to Timothy, given in previous verses\\
+    Titus&1&14 & Other & Usage is ``commandments of men''\\
+    Hebrews&7&5 & Torah & Refers to tithe\\
+    & &16 & Torah & Refers to laws defining the Levitical priesthood\\
+    & &18 & Torah & Refers to laws defining the Levitical priesthood\\
+    &9&19 & Torah & May refer to Ex. 24:8.  Certainly not to the Decalogue\\
+    1 John&3&23 & Other & The command here is to believe in the name of Jesus, and to love one another\\
+    & &24 & Other & Plural, referring to the above, but possibly includes more\\
+    &4&21 & Other & The command here is that anyone who loves God must also love their brother and sister\\
+    2 John&1&5 & Other & The command here is to love one another\\
     \bottomrule
 \end{tabularx}
     \caption{Classification of \entole}
@@ -123,13 +124,11 @@ We use a multilayer perceptron, implemented by TensorFlow's \texttt{tf.estimator
 
 The ouput layer consists of three neurons, one for each type.
 
-We use the following properties of each occurence for the features, or inputs, for the input layer:
-Location of the occurence: if two occurences of \entole appear in the same verse, chapter, or book,
-then perhaps the two occurences belong to the same type.  Traditional author of the text: who was
-the author, and what was his/her cultural or religious background?  Given author of the text: similar
-to the traditional author.  Details about dialogue, if any: was the word used in conversation?  If so,
-who were the parties involved, and what was their cultural or religious background?  Intended audience:
-who was the intended audience of the book in which the occurence appears?
+The features, or inputs, categorise the metadata, or context, for each verse in which \entole occures. 
+We include details about the location of the verse: the book, chapter, and verse; details about the author of the verse:
+the traditional and inferred author of the book and the background of each (Jewish Christian, Gentile Christian, Christian), 
+the intended audience of the book (Jewish CHristian, Gentile Christian, Christian); and details about dialogue, if any:
+who is speaking, and who is listening.  This produces 10 neurons for the input layer.
 
 \begin{table}
     \centering
@@ -202,7 +201,7 @@ who was the intended audience of the book in which the occurence appears?
         John & Jewish Christian \\
         Acts & Gentile Christian \\
         Romans & Jewish Christian \\
-        1 Corintians & Gentile Christian \\
+        1 Corintians & Gentile Christian\tablefootnote{1 Corintians 12:2} \\
         Ephesians & Gentile Christian~\cite{Marshall2003} \\
         Colossians & Gentile Christian~\cite{Hooker2003} \\
         1 Timothy & Jewish Christian \\
@@ -261,11 +260,43 @@ to include in this layer.  In this paper we use two rules of thumb provided in~\
     N_h & = & \frac{2 * N_i}{3} + N_o\\
     N_h & = & \frac{N_i + N_o}{2}
 \end{eqnarray}
-where $N_h$ is the number of neurons in the hidden layer, $N_i$ is the number of neurons in the input
-layer, and $N_o$ is the number of neurons in the output layer.
+where $N_h$ is the number of neurons in the hidden layer, $N_i = 10$ is the number of neurons in the input
+layer, and $N_o = 3$ is the number of neurons in the output layer.  $N_h$ is equal to 10 and 7, respectively.
+
+Run each test 10 times, take the averages and deviation.
 
 \section{Results}
 Here we can see that\ldots
+
+\begin{table}
+    \centering
+    \renewcommand\arraystretch{1.3}
+    \begin{tabular}{@{}lrrrrrrrr@{}}
+    \toprule
+        Book & Chapter & Verse & \multicolumn{2}{c}{Torah} & \multicolumn{2}{c}{Decalogue} & \multicolumn{2}{c}{Other} \\
+        \cmidrule{4-5} \cmidrule{6-7} \cmidrule{8-9} & & & $\overline{x}$ & $\sigma^2$ & $\overline{x}$ & $\sigma^2$ & $\overline{x}$ & $\sigma^2$ \\
+    \midrule
+        Matthew & 22 & 36 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    \bottomrule
+    \end{tabular}
+    \caption{$N_h = 10$}
+    \label{N_h10}
+\end{table}
+
+\begin{table}
+    \centering
+    \renewcommand\arraystretch{1.3}
+    \begin{tabular}{@{}lrrrrrrrr@{}}
+    \toprule
+        Book & Chapter & Verse & \multicolumn{2}{c}{Torah} & \multicolumn{2}{c}{Decalogue} & \multicolumn{2}{c}{Other} \\
+        \cmidrule{4-5} \cmidrule{6-7} \cmidrule{8-9} & & & $\overline{x}$ & $\sigma^2$ & $\overline{x}$ & $\sigma^2$ & $\overline{x}$ & $\sigma^2$ \\
+    \midrule
+        Matthew & 22 & 36 & 0 & 0 & 0 & 0 & 0 & 0 \\
+    \bottomrule
+    \end{tabular}
+    \caption{$N_h = 7$}
+    \label{N_h7}
+\end{table}
 
 \section{Discussion}
 Test
